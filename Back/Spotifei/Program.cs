@@ -5,5 +5,6 @@ System.Console.WriteLine("Adriele Silva Mota \n");
 System.Console.WriteLine("João Victor de Oliveira Melo");
 System.Console.WriteLine("Alan de Oliveira\n");
 
+CadastroUsuarioView.Exibir(new Usuario());
 
-
+LoginUsuarioView.Exibir();

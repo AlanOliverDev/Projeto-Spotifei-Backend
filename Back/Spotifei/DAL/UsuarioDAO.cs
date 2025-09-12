@@ -11,12 +11,12 @@ public class UsuarioDAO : IDAO<Usuario>
 
     public Usuario BuscarPorId(int id)
     {
-        if (usuarios.Id == id)
+        foreach (var usuario in usuarios)
         {
-            return usuario;
-        }
-        else
-        {
+            if (usuarios.Id == id)
+            {
+                return usuario;
+            }
             return null;
         }
     }
@@ -39,5 +39,23 @@ public class UsuarioDAO : IDAO<Usuario>
     public List<Usuario> Listar()
     {
         return usuarios;
+    }
+
+    public void Atualiza(int id, Usuario novoUsuario)
+    {
+        var idExcluir = BuscarPorId(id);
+        if (idExcluir != null)
+        {
+            usuarios.Remove(id);
+            usuarios.Add(novoUsuario);
+
+            Console.WriteLine("Artista atualizado com sucesso");
+
+        }
+        else
+        {
+            Console.WriteLine("Não foi possivel atualizar o artista.");
+        }
+
     }
 }

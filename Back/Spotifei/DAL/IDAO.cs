@@ -2,7 +2,7 @@ public interface IDAO<T>
 {
     public void Adicionar(T objeto);
 
-    public void Atualizar(T objeto);
+    public void Atualizar(int id, T objeto);
 
     public bool Excluir(int id);
 
